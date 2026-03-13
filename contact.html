@@ -24,11 +24,68 @@
     </header>
 
     <main class="container">
-        <section class="content">
-            <h1>İletişim Bilgilerim</h1>
-            <p><strong>E-posta:</strong> meryemakbaba@gmail.com</p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/meryemakbaba">GitHub Profilim</a></p>
-        </section>
+        <div class="contact-container">
+            <h2>Detaylı İletişim Formu</h2>
+            <form>
+                <label for="name">Ad Soyad:</label>
+                <input type="text" id="name" name="name" placeholder="Örn: Asaf Karataş" required>
+
+                <label for="email">E-posta Adresi:</label>
+                <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+
+                <label for="password">Başvuru Takip Şifresi:</label>
+                <input type="password" id="password" name="password" placeholder="Şifrenizi girin">
+
+                <div class="form-group-gray">
+                    <span class="group-title">İletişim Tercihi:</span>
+                    <div class="option-row">
+                        <input type="radio" id="pref-email" name="preference" value="email">
+                        <label for="pref-email">Bana e-posta ile ulaşın</label>
+                    </div>
+                    <div class="option-row">
+                        <input type="radio" id="pref-phone" name="preference" value="phone">
+                        <label for="pref-phone">Bana telefonla ulaşın</label>
+                    </div>
+                </div>
+
+                <div class="form-group-gray">
+                    <span class="group-title">İlgi Alanları / Yetenekler:</span>
+                    <div class="option-row">
+                        <input type="checkbox" id="html" name="skill" value="html">
+                        <label for="html">HTML</label>
+                    </div>
+                    <div class="option-row">
+                        <input type="checkbox" id="css" name="skill" value="css">
+                        <label for="css">CSS</label>
+                    </div>
+                    <div class="option-row">
+                        <input type="checkbox" id="algo" name="skill" value="algo">
+                        <label for="algo">Algoritma</label>
+                    </div>
+                </div>
+
+                <label for="subject">Konu:</label>
+                <select id="subject" name="subject">
+                    <option value="">Lütfen bir konu seçin...</option>
+                    <option value="is">İş Teklifi</option>
+                    <option value="soru">Soru</option>
+                    <option value="geri">Geri Bildirim</option>
+                </select>
+
+                <div class="file-section">
+                    <label for="file">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+                    <input type="file" id="file" name="file">
+                </div>
+
+                <label for="message">Mesajınız:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-submit">Gönder</button>
+                    <button type="reset" class="btn-reset">Temizle</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <footer>
