@@ -2,41 +2,58 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hakkımda - Meryem Akbaba</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-container">
+
+    <div class="wrapper" style="height: auto; min-height: 100vh;">
+        <nav class="navbar">
             <div class="brand">
-                <h1>Meryem Akbaba</h1>
-                <p>Bilgisayar Mühendisliği Öğrencisi</p>
+                <h1>MERYEM<span>AKBABA</span></h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="about.html" class="active">Hakkımda</a></li>
-                    <li><a href="interests.html">İlgi Alanlarım</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="content">
-            <h1>Hakkımda</h1>
-            <p>Merhaba, ben <strong>Meryem Akbaba</strong>. <em>Marmara Üniversitesi'nde Bilgisayar Mühendisliği öğrencisiyim.</em></p>
-            <blockquote>"Teknolojiyle üretmek en büyük motivasyonum."</blockquote>
-            <h2>Eğitim Bilgilerim</h2>
-            <ul>
-                <li>Marmara Üniversitesi - Bilgisayar Mühendisliği</li>
+            <ul class="nav-links">
+                <li><a href="index.html">ANA SAYFA</a></li>
+                <li><a href="about.html" class="active">HAKKIMDA</a></li>
+                <li><a href="interests.html">İLGİ ALANLARIM</a></li>
+                <li><a href="contact.html">İLETİŞİM</a></li>
             </ul>
-        </section>
-    </main>
+        </nav>
 
-    <footer>
-        <p>&copy; 2026 Meryem Akbaba - Web Programlama Dersi</p>
-    </footer>
+        <main class="container" style="padding: 60px 5%; display: flex; flex-direction: column; gap: 40px;">
+            
+            <section class="content" style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 40px; border-radius: 15px;">
+                <h2 style="color: var(--accent-neon); margin-bottom: 20px; text-transform: uppercase;">Kısa Bir Özet</h2>
+                <p style="font-size: 1.2rem; color: var(--text-white);">
+                    Merhaba, ben <strong>Meryem Akbaba</strong>. 
+                </p>
+                <p style="color: var(--text-gray); margin-top: 15px; line-height: 1.8;">
+                    Marmara Üniversitesi'nde Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. Yapay zeka, veri bilimi ve modern web mimarileri üzerine projeler geliştiriyorum. 
+                    Teknolojiyle çözüm üretmek ve sistemlerin güvenilirliğini artırmak en büyük motivasyon kaynağım.
+                </p>
+                <blockquote style="border-left: 4px solid var(--accent-neon); padding-left: 20px; margin: 30px 0; font-style: italic; color: var(--accent-neon); font-size: 1.1rem;">
+                    "Teknolojiyle üretmek en büyük motivasyonum."
+                </blockquote>
+            </section>
+
+            <div style="display: flex; gap: 20px;">
+                <section class="card" style="flex: 1; padding: 30px; align-items: flex-start; text-align: left;">
+                    <h3 style="color: var(--accent-neon); margin-bottom: 15px;">EĞİTİM</h3>
+                    <p style="color: var(--text-white); font-weight: bold;">Marmara Üniversitesi</p>
+                    <p style="color: var(--text-gray);">Bilgisayar Mühendisliği</p>
+                </section>
+
+                
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Meryem Akbaba | Marmara Üniversitesi Web Programlama</p>
+        </footer>
+    </div>
+
 </body>
 </html>

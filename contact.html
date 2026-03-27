@@ -2,94 +2,98 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - Meryem Akbaba</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-container">
+
+    <div class="wrapper" style="height: auto; min-height: 100vh;">
+        <nav class="navbar">
             <div class="brand">
-                <h1>Meryem Akbaba</h1>
-                <p>Bilgisayar Mühendisliği Öğrencisi</p>
+                <h1>MERYEM<span>AKBABA</span></h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="about.html">Hakkımda</a></li>
-                    <li><a href="interests.html">İlgi Alanlarım</a></li>
-                    <li><a href="contact.html" class="active">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            <ul class="nav-links">
+                <li><a href="index.html">ANA SAYFA</a></li>
+                <li><a href="about.html">HAKKIMDA</a></li>
+                <li><a href="interests.html">İLGİ ALANLARIM</a></li>
+                <li><a href="contact.html" class="active">İLETİŞİM</a></li>
+            </ul>
+        </nav>
 
-    <main class="container">
-        <div class="contact-container">
-            <h2>Detaylı İletişim Formu</h2>
-            <form>
-                <label for="name">Ad Soyad:</label>
-                <input type="text" id="name" name="name" placeholder="Örn: Asaf Karataş" required>
-
-                <label for="email">E-posta Adresi:</label>
-                <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
-
-                <label for="password">Başvuru Takip Şifresi:</label>
-                <input type="password" id="password" name="password" placeholder="Şifrenizi girin">
-
-                <div class="form-group-gray">
-                    <span class="group-title">İletişim Tercihi:</span>
-                    <div class="option-row">
-                        <input type="radio" id="pref-email" name="preference" value="email">
-                        <label for="pref-email">Bana e-posta ile ulaşın</label>
+        <main class="container" style="padding: 40px 5%;">
+            <div class="contact-container" style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 40px; border-radius: 15px; max-width: 800px; margin: 0 auto;">
+                <h2 style="color: var(--accent-neon); text-align: center; margin-bottom: 30px; text-transform: uppercase;">Detaylı İletişim Formu</h2>
+                
+                <form>
+                    <div style="margin-bottom: 20px;">
+                        <label for="name" style="color: var(--text-white); display: block; margin-bottom: 8px; font-weight: bold;">Ad Soyad:</label>
+                        <input type="text" id="name" placeholder="Örn: Asaf Karataş" required 
+                               style="background: var(--bg-dark); color: white; border: 1px solid var(--border-color); padding: 12px; width: 100%;">
                     </div>
-                    <div class="option-row">
-                        <input type="radio" id="pref-phone" name="preference" value="phone">
-                        <label for="pref-phone">Bana telefonla ulaşın</label>
+
+                    <div style="margin-bottom: 20px;">
+                        <label for="email" style="color: var(--text-white); display: block; margin-bottom: 8px; font-weight: bold;">E-posta Adresi:</label>
+                        <input type="email" id="email" placeholder="ornek@mail.com" required
+                               style="background: var(--bg-dark); color: white; border: 1px solid var(--border-color); padding: 12px; width: 100%;">
                     </div>
-                </div>
 
-                <div class="form-group-gray">
-                    <span class="group-title">İlgi Alanları / Yetenekler:</span>
-                    <div class="option-row">
-                        <input type="checkbox" id="html" name="skill" value="html">
-                        <label for="html">HTML</label>
+                    <div style="margin-bottom: 25px;">
+                        <label for="password" style="color: var(--text-white); display: block; margin-bottom: 8px; font-weight: bold;">Başvuru Takip Şifresi:</label>
+                        <input type="password" id="password" placeholder="Şifrenizi girin"
+                               style="background: var(--bg-dark); color: white; border: 1px solid var(--border-color); padding: 12px; width: 100%;">
                     </div>
-                    <div class="option-row">
-                        <input type="checkbox" id="css" name="skill" value="css">
-                        <label for="css">CSS</label>
+
+                    <div class="form-group-gray" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid var(--accent-neon);">
+                        <span class="group-title" style="color: var(--accent-neon); font-weight: bold; display: block; margin-bottom: 15px;">İletişim Tercihi:</span>
+                        <div style="display: flex; flex-direction: column; gap: 10px; color: var(--text-white);">
+                            <label><input type="radio" name="pref" value="email" checked> Bana e-posta ile ulaşın</label>
+                            <label><input type="radio" name="pref" value="phone"> Bana telefonla ulaşın</label>
+                        </div>
                     </div>
-                    <div class="option-row">
-                        <input type="checkbox" id="algo" name="skill" value="algo">
-                        <label for="algo">Algoritma</label>
+
+                    <div class="form-group-gray" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid var(--accent-neon);">
+                        <span class="group-title" style="color: var(--accent-neon); font-weight: bold; display: block; margin-bottom: 15px;">İlgi Alanları / Yetenekler:</span>
+                        <div style="display: flex; flex-direction: column; gap: 10px; color: var(--text-white);">
+                            <label><input type="checkbox" value="html"> HTML</label>
+                            <label><input type="checkbox" value="css"> CSS</label>
+                            <label><input type="checkbox" value="algo"> Algoritma</label>
+                        </div>
                     </div>
-                </div>
 
-                <label for="subject">Konu:</label>
-                <select id="subject" name="subject">
-                    <option value="">Lütfen bir konu seçin...</option>
-                    <option value="is">İş Teklifi</option>
-                    <option value="soru">Soru</option>
-                    <option value="geri">Geri Bildirim</option>
-                </select>
+                    <div style="margin-bottom: 20px;">
+                        <label for="subject" style="color: var(--text-white); display: block; margin-bottom: 8px; font-weight: bold;">Konu:</label>
+                        <select id="subject" style="background: var(--bg-dark); color: white; border: 1px solid var(--border-color); padding: 12px; width: 100%;">
+                            <option value="">Lütfen bir konu seçin...</option>
+                            <option value="is">İş Teklifi</option>
+                            <option value="soru">Soru</option>
+                        </select>
+                    </div>
 
-                <div class="file-section">
-                    <label for="file">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
-                    <input type="file" id="file" name="file">
-                </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="file" style="color: var(--text-white); display: block; margin-bottom: 8px; font-weight: bold;">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+                        <input type="file" id="file" style="color: var(--text-gray); width: 100%;">
+                    </div>
 
-                <label for="message">Mesajınız:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
+                    <div style="margin-bottom: 25px;">
+                        <label for="message" style="color: var(--text-white); display: block; margin-bottom: 8px; font-weight: bold;">Mesajınız:</label>
+                        <textarea id="message" rows="4" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..." 
+                                  style="background: var(--bg-dark); color: white; border: 1px solid var(--border-color); padding: 12px; width: 100%; resize: none;"></textarea>
+                    </div>
 
-                <div class="button-group">
-                    <button type="submit" class="btn-submit">Gönder</button>
-                    <button type="reset" class="btn-reset">Temizle</button>
-                </div>
-            </form>
-        </div>
-    </main>
+                    <div class="button-group" style="display: flex; gap: 15px;">
+                        <button type="submit" class="btn-neon" style="flex: 2;">GÖNDER</button>
+                        <button type="reset" class="btn-neon" style="flex: 1; border-color: var(--text-gray); color: var(--text-gray);">TEMİZLE</button>
+                    </div>
+                </form>
+            </div>
+        </main>
 
-    <footer>
-        <p>&copy; 2026 Meryem Akbaba - Web Programlama Dersi</p>
-    </footer>
+        <footer class="footer">
+            <p>&copy; 2026 Meryem Akbaba | Marmara Üniversitesi Web Programlama</p>
+        </footer>
+    </div>
+
 </body>
 </html>

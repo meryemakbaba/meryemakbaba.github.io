@@ -2,40 +2,55 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İlgi Alanlarım - Meryem Akbaba</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-container">
+
+    <div class="wrapper">
+        <nav class="navbar">
             <div class="brand">
-                <h1>Meryem Akbaba</h1>
-                <p>Bilgisayar Mühendisliği Öğrencisi</p>
+                <h1>MERYEM<span>AKBABA</span></h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="about.html">Hakkımda</a></li>
-                    <li><a href="interests.html" class="active">İlgi Alanlarım</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="content">
-            <h1>İlgi Alanlarım</h1>
-            <ul>
-                <li>Web Geliştirme</li>
-                <li>Yapay Zeka ve Veri Bilimi</li>
-                <li>Siber Güvenlik</li>
+            <ul class="nav-links">
+                <li><a href="index.html">ANA SAYFA</a></li>
+                <li><a href="about.html">HAKKIMDA</a></li>
+                <li><a href="interests.html" class="active">İLGİ ALANLARIM</a></li>
+                <li><a href="contact.html">İLETİŞİM</a></li>
             </ul>
-        </section>
-    </main>
+        </nav>
 
-    <footer>
-        <p>&copy; 2026 Meryem Akbaba - Web Programlama Dersi</p>
-    </footer>
+        <main class="hero" style="height: 80vh; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <div class="hero-text" style="padding: 0; align-items: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 30px;">İLGİ <span>ALANLARIM</span></h2>
+                
+                <div class="cards-section" style="height: auto; width: 100%; max-width: 900px; justify-content: center;">
+                    <div class="card" style="padding: 30px; flex-direction: column; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🌐</span>
+                        <h3>Web Geliştirme</h3>
+                    </div>
+                    <div class="card" style="padding: 30px; flex-direction: column; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🤖</span>
+                        <h3>Yapay Zeka & Veri Bilimi</h3>
+                    </div>
+                    <div class="card" style="padding: 30px; flex-direction: column; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🛡️</span>
+                        <h3>Siber Güvenlik</h3>
+                    </div>
+                </div>
+
+                <p style="margin-top: 40px; color: var(--text-gray); max-width: 600px;">
+                    Bilgisayar Mühendisliği yolculuğumda bu teknolojileri kullanarak inovatif çözümler üretmeyi hedefliyorum.
+                </p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Meryem Akbaba | Marmara Üniversitesi Web Programlama</p>
+        </footer>
+    </div>
+
 </body>
 </html>
