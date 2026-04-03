@@ -1,10 +1,13 @@
+/* --- GENEL DEĞİŞKENLER VE AYARLAR --- */
 :root {
     --bg-dark: #0a192f;
     --accent-neon: #39ff14;
+    --meryem-yellow: #ffcc00;
     --text-white: #ffffff;
     --text-gray: #8892b0;
     --card-bg: #112240;
-    --border-color: rgba(57, 255, 20, 0.2);
+    --border-color: rgba(255, 204, 0, 0.2);
+    --dark-bg-pure: #050505;
 }
 
 * {
@@ -25,6 +28,7 @@ body {
     min-height: 100vh;
 }
 
+/* --- NAVBAR --- */
 .navbar {
     display: flex;
     height: 10vh;
@@ -32,12 +36,12 @@ body {
     align-items: center;
     padding: 0 5%;
     background-color: var(--bg-dark);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 2px solid var(--meryem-yellow);
 }
 
 .brand h1 {
     font-size: 1.5rem;
-    color: var(--accent-neon);
+    color: var(--meryem-yellow);
     letter-spacing: -1px;
 }
 
@@ -61,10 +65,11 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--accent-neon);
-    text-shadow: 0 0 10px var(--accent-neon);
+    color: var(--meryem-yellow);
+    text-shadow: 0 0 10px var(--meryem-yellow);
 }
 
+/* --- HERO SECTION --- */
 .hero {
     display: flex;
     height: 30vh;
@@ -88,15 +93,15 @@ body {
 }
 
 .hero-text h2 span {
-    color: var(--accent-neon);
+    color: var(--meryem-yellow);
 }
 
 .btn-neon {
     width: fit-content;
     padding: 10px 20px;
     background: transparent;
-    border: 1px solid var(--accent-neon);
-    color: var(--accent-neon);
+    border: 1px solid var(--meryem-yellow);
+    color: var(--meryem-yellow);
     cursor: pointer;
     transition: 0.3s;
     font-weight: bold;
@@ -105,9 +110,9 @@ body {
 }
 
 .btn-neon:hover {
-    background: var(--accent-neon);
+    background: var(--meryem-yellow);
     color: var(--bg-dark);
-    box-shadow: 0 0 20px var(--accent-neon);
+    box-shadow: 0 0 20px var(--meryem-yellow);
 }
 
 .hero-image-placeholder {
@@ -122,10 +127,11 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border: 1px solid var(--accent-neon);
+    border: 1px solid var(--meryem-yellow);
     border-radius: 5px;
 }
 
+/* --- CARDS SECTION --- */
 .cards-section {
     display: flex;
     height: 30vh;
@@ -147,7 +153,7 @@ body {
 }
 
 .card:hover {
-    border-color: var(--accent-neon);
+    border-color: var(--meryem-yellow);
     transform: translateY(-3px);
 }
 
@@ -157,6 +163,7 @@ body {
     letter-spacing: 1px;
 }
 
+/* --- GROW SECTION --- */
 .grow-section {
     display: flex;
     height: 20vh;
@@ -173,17 +180,18 @@ body {
 }
 
 .box-grow-1 { flex-grow: 1; background-color: #112240; color: var(--text-gray); }
-.box-grow-2 { flex-grow: 2; background-color: var(--accent-neon); color: var(--bg-dark); }
+.box-grow-2 { flex-grow: 2; background-color: var(--meryem-yellow); color: var(--bg-dark); }
 .box-grow-3 { flex-grow: 1; background-color: #1d2d50; color: var(--text-gray); }
 
+/* --- FOOTER & CONTACT --- */
 .footer {
     display: flex;
     height: 10vh;
     justify-content: center;
     align-items: center;
     background-color: var(--bg-dark);
-    border-top: 1px solid var(--border-color);
-    color: var(--text-gray);
+    border-top: 1px solid var(--meryem-yellow);
+    color: var(--meryem-yellow);
     font-size: 0.75rem;
 }
 
@@ -210,5 +218,212 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-    border-left: 3px solid var(--accent-neon);
+    border-left: 3px solid var(--meryem-yellow);
+}
+
+/* --- YENİ LAB-POSITION SAYFASI TASARIMI --- */
+
+.lab-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; /* Biraz daha alan tanıdık */
+    padding: 40px;
+}
+
+/* Ana Container: Genişliği dev yazıya göre artırıldı */
+.mission-container {
+    position: relative;
+    width: 1100px; /* Yazı taşmasın diye genişlettik */
+    min-height: 550px;
+    background: var(--dark-bg-pure);
+    border: 2px solid var(--meryem-yellow);
+    display: flex;
+    padding: 60px;
+    border-radius: 0 80px 0 80px;
+    box-shadow: 0 0 50px rgba(255, 204, 0, 0.15);
+    overflow: visible; /* Absolute öğelerin taşabilmesi için */
+}
+
+/* Sol Taraf: Dev Başlık ve Açıklama */
+.content-left {
+    flex: 3; /* Yazıya daha fazla alan verdik */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.title-layer {
+    position: relative; /* Badge'in buna göre hizalanması için kritik */
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.project-title {
+    font-size: 7.5rem; /* Daha da devleşti */
+    color: #fff;
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* HOCANIN İSTEDİĞİ: Yazının tam üstünde duran rozet */
+.badge-free {
+    position: absolute;
+    top: 50%; 
+    left: 40%; /* Yazının üzerine binmesi için sola çektik */
+    transform: translate(-50%, -50%) rotate(-8deg); /* Daha dinamik duruş */
+    background: #ffffff;
+    color: #000;
+    padding: 10px 30px;
+    font-weight: 900;
+    font-size: 1.4rem;
+    z-index: 10; /* Yazının önünde olmasını sağlar */
+    border-radius: 4px;
+    cursor: wait;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    white-space: nowrap; /* Yazı kırılmasın */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.badge-free:hover {
+    transform: translate(-50%, -50%) scale(1.3) rotate(0deg);
+    background: var(--meryem-yellow);
+}
+
+.description {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 85%;
+}
+
+.mini-features {
+    display: flex;
+    gap: 20px;
+}
+
+.feature-item {
+    padding: 12px 25px;
+    border: 1px solid var(--meryem-yellow);
+    color: var(--meryem-yellow);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: cell;
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    background: var(--meryem-yellow);
+    color: #000;
+    transform: translateY(-5px);
+}
+
+/* Sağ Taraf: Analiz ve İletişim Butonları */
+.action-right {
+    flex: 1;
+    position: relative;
+    min-width: 250px;
+}
+
+.action-btn {
+    position: absolute;
+    width: 240px;
+    padding: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.main-btn {
+    bottom: 160px;
+    right: 0;
+    background: var(--meryem-yellow);
+    color: #000;
+    border: none;
+    animation: bounceYellow 2s infinite ease-in-out;
+}
+
+.sub-btn {
+    bottom: 70px;
+    right: 0;
+    background: transparent;
+    border: 2px solid var(--meryem-yellow);
+    color: var(--meryem-yellow);
+}
+
+.sub-btn:hover {
+    background: white;
+    color: #000;
+    border-color: white;
+}
+
+/* Absolute Bilgi Elemanları */
+.version-tag {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    color: var(--meryem-yellow);
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.status-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 80px;
+    background: var(--meryem-yellow);
+    color: #000;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+}
+
+/* FİXED İLETİŞİM BALONU */
+.helper-bubble {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 85px;
+    height: 85px;
+    background: var(--meryem-yellow);
+    color: #000;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 0.75rem;
+    z-index: 1000;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.helper-bubble:hover {
+    bottom: 60px;
+    right: 60px;
+    width: 170px;
+    height: 170px;
+    font-size: 1.2rem;
+    background: var(--accent-neon);
+    border-radius: 30px;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes bounceYellow {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 5px var(--meryem-yellow); }
+    50% { transform: translateY(-30px); box-shadow: 0 0 35px var(--meryem-yellow); }
 }
