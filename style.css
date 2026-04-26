@@ -183,6 +183,8 @@ body {
 .box-grow-2 { flex-grow: 2; background-color: var(--meryem-yellow); color: var(--bg-dark); }
 .box-grow-3 { flex-grow: 1; background-color: #1d2d50; color: var(--text-gray); }
 
+
+
 /* --- FOOTER & CONTACT --- */
 .footer {
     display: flex;
@@ -221,20 +223,44 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
     border-left: 3px solid var(--meryem-yellow);
 }
 
-/* --- YENİ LAB-POSITION SAYFASI TASARIMI --- */
+
+.project-links-hidden {
+    transform: translateX(-10px);
+    display: flex;
+}
+
+/* Mobilde butonların alt alta binmemesi için esneklik sağlar */
+@media (max-width: 768px) {
+    .project-trigger-wrapper {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+}
+
+
+.project-trigger-wrapper {
+    margin-top: 30px; 
+}
+
+
+#projectButtons {
+    margin-left: 10px; 
+}
+
+/* --- YENİ hafta5  SAYFASI TASARIMI --- */
 
 .lab-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 85vh; /* Biraz daha alan tanıdık */
+    min-height: 85vh;
     padding: 40px;
 }
 
-/* Ana Container: Genişliği dev yazıya göre artırıldı */
+
 .mission-container {
     position: relative;
-    width: 1100px; /* Yazı taşmasın diye genişlettik */
+    width: 1100px; 
     min-height: 550px;
     background: var(--dark-bg-pure);
     border: 2px solid var(--meryem-yellow);
@@ -242,12 +268,12 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
     padding: 60px;
     border-radius: 0 80px 0 80px;
     box-shadow: 0 0 50px rgba(255, 204, 0, 0.15);
-    overflow: visible; /* Absolute öğelerin taşabilmesi için */
+    overflow: visible; 
 }
 
-/* Sol Taraf: Dev Başlık ve Açıklama */
+
 .content-left {
-    flex: 3; /* Yazıya daha fazla alan verdik */
+    flex: 3; 
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -262,7 +288,7 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
 }
 
 .project-title {
-    font-size: 7.5rem; /* Daha da devleşti */
+    font-size: 7.5rem; 
     color: #fff;
     font-weight: 900;
     line-height: 0.85;
@@ -272,18 +298,18 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
     z-index: 1;
 }
 
-/* HOCANIN İSTEDİĞİ: Yazının tam üstünde duran rozet */
+
 .badge-free {
     position: absolute;
     top: 50%; 
-    left: 40%; /* Yazının üzerine binmesi için sola çektik */
-    transform: translate(-50%, -50%) rotate(-8deg); /* Daha dinamik duruş */
+    left: 40%; 
+    transform: translate(-50%, -50%) rotate(-8deg); 
     background: #ffffff;
     color: #000;
     padding: 10px 30px;
     font-weight: 900;
     font-size: 1.4rem;
-    z-index: 10; /* Yazının önünde olmasını sağlar */
+    z-index: 10; 
     border-radius: 4px;
     cursor: wait;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
@@ -326,7 +352,6 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
     transform: translateY(-5px);
 }
 
-/* Sağ Taraf: Analiz ve İletişim Butonları */
 .action-right {
     flex: 1;
     position: relative;
@@ -368,7 +393,7 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
     border-color: white;
 }
 
-/* Absolute Bilgi Elemanları */
+
 .version-tag {
     position: absolute;
     top: -35px;
@@ -418,11 +443,11 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
     width: 170px;
     height: 170px;
     font-size: 1.2rem;
-    background: var(--accent-neon);
+    background: var(--meryem-yellow);
     border-radius: 30px;
 }
 
-/* --- KEYFRAMES --- */
+
 @keyframes bounceYellow {
     0%, 100% { transform: translateY(0); box-shadow: 0 0 5px var(--meryem-yellow); }
     50% { transform: translateY(-30px); box-shadow: 0 0 35px var(--meryem-yellow); }
@@ -430,47 +455,46 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
 
 /* --- HAFTA 6 SAYFASI ÖZEL EKLEMELERİ VE DÜZENLEMELERİ --- */
 
-/* 1. Ana Konteynır Boşlukları */
 .lab-main {
-    padding: 100px 5% !important; /* Üstten ve alttan daha geniş boşluk */
+    padding: 100px 5% !important; 
     min-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* 2. Kartları Saran Yapı (Spacing) */
+
 .lab-main > div[style*="display: flex"] {
-    gap: 60px !important; /* Kartların arasını açtık */
+    gap: 60px !important; 
     margin-top: 50px;
 }
 
-/* 3. Kart İçi Hizalama ve Boşluklandırma */
+
 .contact-container {
-    padding: 40px !important; /* İçeriden daha fazla boşluk */
+    padding: 40px !important; 
     display: flex;
     flex-direction: column;
-    min-height: 420px; /* Kart boylarını eşitledik */
+    min-height: 420px; 
     justify-content: flex-start;
 }
 
-/* 4. Başlık, Input ve Buton Arası Mesafeler */
+
 .contact-container h3 {
     margin-bottom: 35px !important;
 }
 
 .contact-container input, 
 .contact-container select {
-    margin-bottom: 25px !important; /* Elemanlar arası nefes payı */
+    margin-bottom: 25px !important; 
 }
 
 .contact-container .btn-neon {
-    margin-top: auto; /* Butonu her zaman kartın en altına iter */
+    margin-top: auto; 
     width: 100%;
     padding: 15px !important;
 }
 
-/* 5. Select (Seçim) Kutusu Modernizasyonu */
+
 select {
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffcc00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -499,11 +523,77 @@ input:focus, select:focus, textarea:focus {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%); /* Tam merkezleme */
-    width: 180px; /* Daha belirgin bir çizgi boyutu */
+    transform: translateX(-50%);
+    width: 180px; 
     height: 3px;
     background: var(--meryem-yellow);
     box-shadow: 0 0 15px var(--meryem-yellow);
+}
+
+
+.section-title {
+    color: var(--meryem-yellow);
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.lab-container {
+    display: flex; 
+    gap: 30px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.lab-card {
+    margin: 0 !important; 
+    width: 400px !important; 
+    flex: none;
+}
+
+.lab-card h3 {
+    color: var(--bg-light-pure); 
+    margin-bottom: 25px !important; 
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lab-card input, 
+.lab-card select {
+    background-color: var(--bg-dark) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-white) !important;
+    padding: 12px !important;
+    margin-bottom: 0px !important; 
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    color: var(--text-white);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.lab-card .btn-neon {
+    margin-top: 10px !important;
+}
+
+
+.lab-card .form-group-gray {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-left: 4px solid var(--meryem-yellow);
 }
 
 /* 8. Sonuç Kutusu Animasyonu */
@@ -518,8 +608,79 @@ input:focus, select:focus, textarea:focus {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- KEYFRAMES --- */
+
 @keyframes bounceYellow {
     0%, 100% { transform: translateY(0); box-shadow: 0 0 5px var(--meryem-yellow); }
     50% { transform: translateY(-30px); box-shadow: 0 0 35px var(--meryem-yellow); }
 }
+
+
+
+:root {
+    --bg-deep: #0a192f;
+    --card-deep: #112240;
+    --meryem-yellow: #ffcc00;
+    --text-gray: #8892b0;
+    --bg-light-pure: #ffffff;
+    --bg-light-card: #f8f9fa;
+    --text-light-main: #1a1a1a;
+    --accent-light-gold: #c69b00;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.main-header {
+    border-bottom: 2px solid var(--meryem-yellow);
+    padding: 25px 0;
+    background-color: var(--bg-deep);
+}
+.brand-logo { font-weight: 900; font-size: 1.8rem; text-transform: uppercase; color: white; text-decoration: none; }
+.brand-logo span { color: var(--meryem-yellow); }
+.nav-links-custom a { color: var(--text-gray); text-decoration: none; font-weight: 700; margin-left: 30px; font-size: 0.9rem; transition: 0.3s; }
+
+/* --- KARTLAR & FORM (GECE MODU) --- */
+.feature-card {
+    background-color: var(--card-deep);
+    border: 2px solid var(--meryem-yellow);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
+}
+.form-section-card { background-color: var(--card-deep); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 40px; }
+.custom-control { background-color: var(--bg-deep) !important; border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 12px; }
+.field-label { color: var(--meryem-yellow); font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+.badge-custom-style { background-color: var(--meryem-yellow); color: var(--bg-deep); font-weight: bold; padding: 8px 15px; border-radius: 20px; }
+.text-meryem { color: var(--meryem-yellow); }
+
+/* --- LIGHT THEME (AYDINLIK MOD) KURALLARI --- */
+body.light-theme { background-color: var(--bg-light-pure) !important; color: var(--text-light-main) !important; }
+body.light-theme .main-header { background-color: var(--bg-light-pure) !important; border-color: var(--accent-light-gold) !important; }
+body.light-theme .brand-logo, body.light-theme .nav-links-custom a { color: var(--text-light-main) !important; }
+body.light-theme .brand-logo span, body.light-theme .text-meryem, body.light-theme .field-label, body.light-theme h4, body.light-theme i { color: var(--accent-light-gold) !important; }
+
+body.light-theme .feature-card, body.light-theme .form-section-card {
+    background-color: var(--bg-light-card) !important;
+    border: 1px solid #dee2e6 !important;
+    color: var(--text-light-main) !important;
+}
+
+body.light-theme .custom-control { background-color: #ffffff !important; color: #000000 !important; border-color: #cccccc !important; }
+body.light-theme .text-white, body.light-theme .check-label-text, body.light-theme .form-main-title { color: var(--text-light-main) !important; }
+body.light-theme .text-gray { color: #555555 !important; }
+body.light-theme .badge-custom-style { background-color: var(--accent-light-gold) !important; color: white !important; }
+
+/* BUTONLAR */
+.btn-neon { border: 1px solid var(--meryem-yellow); color: var(--meryem-yellow); background: transparent; font-weight: bold; transition: 0.3s; }
+.btn-neon:hover { background: var(--meryem-yellow); color: var(--bg-deep); box-shadow: 0 0 20px var(--meryem-yellow); }
+body.light-theme .btn-neon { background-color: var(--accent-light-gold) !important; border-color: var(--accent-light-gold) !important; color: white !important; }
+
+
+
+

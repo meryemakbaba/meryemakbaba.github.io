@@ -13,48 +13,53 @@
         <nav class="navbar">
             <div class="brand">
                 <h1>MERYEM<span>AKBABA</span></h1>
-                <p style="color: var(--text-gray); font-size: 0.7rem; letter-spacing: 1px;">BİLGİSAYAR MÜHENDİSLİĞİ ÖĞRENCİSİ</p>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" >ANA SAYFA</a></li>
-                <li><a href="about.html">HAKKIMDA</a></li>
-                <li><a href="lab-position.html">LAB ÇALIŞMASI</a></li>
-                <li><a href="interests.html">İLİGİ ALANLARIM</a></li>
-                <li><a href="hafta6.html" class="active">HAFTA 6</a></li> 
-                <li><a href="contact.html">İLETİŞİM</a></li>
+                <li><a href="index.html">← ANA SAYFAYA DÖN</a></li>
             </ul>
         </nav>
 
-        <main class="lab-main" style="flex-direction: column; gap: 40px; padding: 60px 5%;">
-            <h2 style="color: var(--meryem-yellow); text-align: center; letter-spacing: 2px;">JAVASCRIPT LABORATUVAR UYGULAMALARI</h2>
+        <main class="lab-main">
+            <h2 class="section-title">JAVASCRIPT LABORATUVAR UYGULAMALARI</h2>
             
-            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; width: 100%;">
-                
-                <div class="contact-container" style="margin: 0; width: 400px; flex: none;">
-                    <h3 style="color: var(--meryem-yellow); margin-bottom: 20px; font-size: 1.1rem;">Öğrenci Not Hesaplama</h3>
-                    <input type="text" id="studentName" placeholder="Ad Soyad">
-                    <input type="number" id="vizeNote" placeholder="Vize Notu (%40)">
-                    <input type="number" id="finalNote" placeholder="Final Notu (%60)">
-                    <button class="btn-neon" style="width: 100%;" onclick="hesaplaNot()">HESAPLA</button>
-                    
-                    <div id="notSonuc" class="form-group-gray" style="margin-top: 20px; display: none; font-size: 0.9rem;">
+            <div class="lab-container">
+                <div class="contact-container lab-card">
+                    <h3>Öğrenci Not Hesaplama</h3>
+                    <div class="input-group">
+                        <label for="studentName">AD SOYAD</label>
+                        <input type="text" id="studentName" placeholder="Ad Soyad giriniz">
                     </div>
+                    <div class="input-group">
+                        <label for="vizeNote">VİZE NOTU (%40)</label>
+                        <input type="number" id="vizeNote" placeholder="0-100 arası">
+                    </div>
+                    <div class="input-group">
+                        <label for="finalNote">FİNAL NOTU (%60)</label>
+                        <input type="number" id="finalNote" placeholder="0-100 arası">
+                    </div>
+                    <button class="btn-neon" onclick="hesaplaNot()">HESAPLA</button>
+                    
+                    <div id="notSonuc" class="form-group-gray"></div>
                 </div>
 
-                <div class="contact-container" style="margin: 0; width: 400px; flex: none;">
-                    <h3 style="color: var(--meryem-yellow); margin-bottom: 20px; font-size: 1.1rem;">Birim Dönüştürücü</h3>
-                    <input type="number" id="unitValue" placeholder="Değer Giriniz">
-                    <select id="convertType">
-                        <option value="c-f">Celsius -> Fahrenheit</option>
-                        <option value="m-km">Metre -> Kilometre</option>
-                        <option value="kg-g">Kilogram -> Gram</option>
-                    </select>
-                    <button class="btn-neon" style="width: 100%;" onclick="donustur()">DÖNÜŞTÜR</button>
-                    
-                    <div id="birimSonuc" class="form-group-gray" style="margin-top: 20px; display: none; font-size: 0.9rem;">
+                <div class="contact-container lab-card">
+                    <h3>Birim Dönüştürücü</h3>
+                    <div class="input-group">
+                        <label for="unitValue">DEĞER GİRİNİZ</label>
+                        <input type="number" id="unitValue" placeholder="Sayısal değer giriniz">
                     </div>
+                    <div class="input-group">
+                        <label for="convertType">DÖNÜŞÜM TÜRÜ</label>
+                        <select id="convertType">
+                            <option value="c-f">Celsius -> Fahrenheit</option>
+                            <option value="m-km">Metre -> Kilometre</option>
+                            <option value="kg-g">Kilogram -> Gram</option>
+                        </select>
+                    </div>
+                    <button class="btn-neon" onclick="donustur()">DÖNÜŞTÜR</button>
+                    
+                    <div id="birimSonuc" class="form-group-gray"></div>
                 </div>
-
             </div>
         </main>
 
@@ -63,51 +68,6 @@
         </footer>
     </div>
 
-    <script>
-    function hesaplaNot() {
-        const ad = document.getElementById('studentName').value;
-        const vize = parseFloat(document.getElementById('vizeNote').value);
-        const final = parseFloat(document.getElementById('finalNote').value);
-        const sonucDiv = document.getElementById('notSonuc');
-
-        if(!ad || isNaN(vize) || isNaN(final)) {
-            alert("Lütfen tüm alanları doldurun!");
-            return;
-        }
-
-        const ortalama = (vize * 0.4) + (final * 0.6);
-        let harf = "";
-        
-        if (ortalama >= 90) harf = "AA";
-        else if (ortalama >= 85) harf = "BA";
-        else if (ortalama >= 80) harf = "BB";
-        else if (ortalama >= 75) harf = "CB";
-        else if (ortalama >= 70) harf = "CC";
-        else if (ortalama >= 60) harf = "DC";
-        else if (ortalama >= 50) harf = "DD";
-        else harf = "FF";
-
-        let durum = ortalama >= 50 ? "GEÇTİ" : "KALDI";
-        
-        sonucDiv.innerHTML = `<strong>${ad.toUpperCase()}</strong><br>Ortalama: ${ortalama.toFixed(2)}<br>Harf Notu: ${harf}<br>Durum: ${durum}`;
-        sonucDiv.style.display = "block";
-    }
-
-    function donustur() {
-        const val = parseFloat(document.getElementById('unitValue').value);
-        const type = document.getElementById('convertType').value;
-        const sonucDiv = document.getElementById('birimSonuc');
-        let res = 0;
-
-        if(isNaN(val)) { alert("Lütfen bir sayı giriniz!"); return; }
-
-        if(type === "c-f") res = (val * 9/5) + 32;
-        else if(type === "m-km") res = val / 1000;
-        else if(type === "kg-g") res = val * 1000;
-
-        sonucDiv.innerHTML = "<strong>Sonuç:</strong> " + res.toLocaleString('tr-TR');
-        sonucDiv.style.display = "block";
-    }
-    </script>
+    <script src="scripts/hafta6.js"></script>
 </body>
 </html>
